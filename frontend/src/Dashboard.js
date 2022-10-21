@@ -10,22 +10,7 @@ import './dashboard.css';
 
 function Dashboard() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+   
     <Fragment>
     <div className = "dashboard">
         <body>
@@ -253,6 +238,8 @@ function Dashboard() {
                     <span>Sign Out</span>
                 </a>
                 </li>
+
+                
 
             </ul>
             </li>
@@ -494,7 +481,12 @@ function Dashboard() {
             </li>
             {/* <!-- End Register Page Nav --> */}
 
-
+            <li className="nav-item">
+                <a className="nav-link collapsed" href="/add">
+                <i className="bi bi-card-list"></i>
+                <span>Add User</span>
+                </a>
+            </li>
             
 
             <li className="nav-item">

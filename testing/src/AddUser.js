@@ -13,10 +13,12 @@ const AddUser = () => {
     const alert = useAlert();
     const navigate = useNavigate();
     
-    const {error, success } = useSelector((state) => state.userDetails);
+    const {  error, success } = useSelector((state) => state.user);
 
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+
     const [department, setDepartment] = useState("");
     const [password, setPassword] = useState("");
 
@@ -40,6 +42,8 @@ const AddUser = () => {
 
         myForm.set("name", name);
         myForm.set("username", username);
+        myForm.set("email", email);
+
         myForm.set("department", department);
         myForm.set("password", password);
 
@@ -70,6 +74,15 @@ const AddUser = () => {
                             onChange={(e) => setUsername(e.target.value)}
                             />
                     </div>
+                    <div className="Email">
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            />
+                    </div>
                     <div className="Department">
                         <input
                             type="department"
@@ -88,18 +101,18 @@ const AddUser = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             />
                     </div>
-                    <Button
+                    {/* <Button
                         id="addUserBtn"
                         type="submit"
                         // disabled={loading ? true : false}
                         >
-                        Create
-                    </Button>
+                        Add User
+                    </Button> */}
 
-
+                    <input type="submit" value="Add User" className="addBtn"/>
                 </form>
                 
-                <input type="submit" value="Add User" className="addBtn"/>
+                {/* <input type="submit" value="Add User" className="addBtn"/> */}
                 
 
             </div>

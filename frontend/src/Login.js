@@ -1,7 +1,7 @@
 import React, {useRef, useState, useEffect, Fragment} from "react";
 import {Link, useNavigate, useLocation} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { clearErrors, login, register} from "./userAction";
+import { clearErrors, login, register} from "./action/userAction";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import {useAlert} from "react-alert";
@@ -46,7 +46,7 @@ const Login = () => {
   }
 
   const location = useLocation();
-  const redirect = location.search ? location.search.split("=")[1] : "/login";
+  // const redirect = location.search ? location.search.split("=")[1] : "/login";
 
 
   useEffect(()=>{
@@ -55,10 +55,10 @@ const Login = () => {
       dispatch(clearErrors());
     }
     if (isAuthenticated){
-      navigate(redirect);
+      navigate("/dashboard");
     }
 
-  }, [dispatch, error, alert, navigate, isAuthenticated, redirect]);
+  }, [dispatch, error, alert, navigate, isAuthenticated]);
   
   return (
     <Fragment>
@@ -87,7 +87,7 @@ const Login = () => {
                     {/* <p className="text-center small">Enter your username & password to login</p> */}
                   </div>
 
-                  <form className="row g-3 needs-validation" novalidate onSubmit={loginSubmit}>
+                  <form className="row g-3 needs-validation" onSubmit={loginSubmit}>
 
                     <div className="col-12">
                       <label for="yourUsername" className="form-label">
