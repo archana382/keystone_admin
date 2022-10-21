@@ -15,7 +15,9 @@ const Dashboard = () => {
                 <Link to="/add">
                     <p>Add User</p>
                 </Link>
-
+                <Link to="/import">
+                    <p>Import from excel</p>
+                </Link>
             </div>
         </Fragment>
     )
