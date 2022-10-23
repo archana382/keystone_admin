@@ -13,7 +13,7 @@ function App() {
   // it will contain array of objects
 
   // handle File
-  const fileType=['application/vnd.ms-excel'];
+  const fileType=['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
   const handleFile = (e)=>{
     let selectedFile = e.target.files[0];
     if(selectedFile){
