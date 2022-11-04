@@ -18,6 +18,9 @@ const Dashboard = () => {
                 <Link to="/import">
                     <p>Import from excel</p>
                 </Link>
+                <Link to="/calendar">
+                    <p>Calendar</p>
+                </Link>
             </div>
         </Fragment>
     )

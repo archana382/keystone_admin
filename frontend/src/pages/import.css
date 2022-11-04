@@ -1,0 +1,23 @@
+
+.form{
+    float: center;
+    margin-left: 200px;
+}
+.viewer{
+    float: center;
+    margin-left: 200px;
+}
+.view{
+    margin-left:200px;
+}
+
+.pagetitle {
+    margin-bottom: 10px;
+  }
+  
+  .pagetitle h1 {
+    font-size: 24px;
+    margin-right: 300px;
+    font-weight: 600;
+    color: #012970;
+  }

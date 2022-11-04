@@ -86,7 +86,7 @@ import {
         return {
           loading: false,
           success: action.payload.success,
-          user: action.payload.product,
+          user: action.payload.user,
         };
       case ADD_USER_FAIL:
         return {

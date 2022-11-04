@@ -254,16 +254,16 @@ function Dashboard() {
             <ul className="sidebar-nav" id="sidebar-nav">
 
             <li className="nav-item">
-                <a className="nav-link " href="index.html">
+                <a className="nav-link " href="/dashboard">
                 <i className="bi bi-grid"></i>
                 <span>Dashboard</span>
                 </a>
             </li>
             {/* <!-- End Dashboard Nav --> */}
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
                 <a className="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                <i className="bi bi-menu-button-wide"></i><span>Import From Excel</span><i className="bi bi-chevron-down ms-auto"></i>
+                <i className="bi bi-menu-button-wide"></i><span>Import From Excel</span><i className="bi bi-chevron-down ms-auto" href="/import"></i>
                 </a>
                 <ul id="components-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
@@ -337,7 +337,7 @@ function Dashboard() {
                     </a>
                 </li>
                 </ul>
-            </li>
+            </li> */}
             {/* <!-- End Components Nav --> */}
 
             {/* <li className="nav-item">
@@ -440,7 +440,13 @@ function Dashboard() {
             {/* <li className="nav-heading">Completed</li> */}
 
             <li className="nav-item">
-                <a className="nav-link collapsed" href="users-profile.html">
+                <a className="nav-link collapsed" href="/import">
+                <i className="bi bi-person"></i>
+                <span>Import From Excel</span>
+                </a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link collapsed" href="/new">
                 <i className="bi bi-person"></i>
                 <span>New Student from Call Center</span>
                 </a>
@@ -448,7 +454,7 @@ function Dashboard() {
             {/* <!-- End Profile Page Nav --> */}
 
             <li className="nav-item">
-                <a className="nav-link collapsed" href="pages-faq.html">
+                <a className="nav-link collapsed" href="/details">
                 <i className="bi bi-question-circle"></i>
                 <span>Student Details</span>
                 </a>
@@ -456,7 +462,7 @@ function Dashboard() {
             {/* <!-- End F.A.Q Page Nav --> */}
 
             <li className="nav-item">
-                <a className="nav-link collapsed" href="pages-contact.html">
+                <a className="nav-link collapsed" href="/completed">
                 <i className="bi bi-envelope"></i>
                 <span>Completed</span>
                 </a>
@@ -465,21 +471,15 @@ function Dashboard() {
             
             <li className="nav-item">
                 
-                <a className="nav-link collapsed" href="Login.js">
+                <a className="nav-link collapsed" href="/calendar">
                 <i className="bi bi-box-arrow-in-right"></i>
-                <span>Login</span>
+                <span>Calendar</span>
                 </a>
                 
             </li>
             {/* <!-- End Login Page Nav --> */}
 
-            <li className="nav-item">
-                <a className="nav-link collapsed" href="pages-register.html">
-                <i className="bi bi-card-list"></i>
-                <span>Register User</span>
-                </a>
-            </li>
-            {/* <!-- End Register Page Nav --> */}
+            
 
             <li className="nav-item">
                 <a className="nav-link collapsed" href="/add">
@@ -489,22 +489,8 @@ function Dashboard() {
             </li>
             
 
-            <li className="nav-item">
-                <a className="nav-link collapsed" href="pages-error-404.html">
-                <i className="bi bi-dash-circle"></i>
-                <span>Error 404</span>
-                </a>
-            </li>
-            {/* <!-- End Error 404 Page Nav --> */}
-        
-
-            <li className="nav-item">
-                <a className="nav-link collapsed" href="pages-blank.html">
-                <i className="bi bi-file-earmark"></i>
-                <span>Blank</span>
-                </a>
-            </li>
-            {/* <!-- End Blank Page Nav --> */}
+            
+          
 
             </ul>
 

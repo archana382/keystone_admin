@@ -4,10 +4,14 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import thunk from "redux-thunk";
 import { userReducer } from "./reducers/userReducer";
+import calendarReducer from "./reducers/calendarReducer";
+
 
 
 const reducer = combineReducers({
-    user:userReducer
+    user : userReducer,
+    calendar : calendarReducer
+
 })
 
 let initialState = {};

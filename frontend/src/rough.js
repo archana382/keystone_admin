@@ -1,68 +1,4 @@
-import React, {useRef, useState, useEffect, Fragment} from "react";
-import {Link, useNavigate, useLocation} from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { clearErrors, login, register} from "./action/userAction";
-import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import {useAlert} from "react-alert";
-import './login.css';
-
-const Login = () => {
-
-  const dispatch = useDispatch();
-  const alert = useAlert();
-  const navigate = useNavigate();
-
-  const {error, loading, isAuthenticated} = useSelector((state) => state.user);
-
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-
-  const [user , setUser] = useState({
-    name:"",
-    username:"",
-    email:"",
-    password:"",
-  });
-  
-  const {name, username, email, password} = user;
-
-  const loginSubmit = (e) => {
-    e.preventDefault();
-    dispatch(login(loginUsername, loginPassword));
-  };
-
-  const registerSubmit = (e) => {
-    e.preventDefault();
-    
-    const myForm = new FormData();
-
-    myForm.set("name", name);
-    myForm.set("username", username);
-    myForm.set("email", email);
-    myForm.set("password", password);
-
-    dispatch(register(myForm));
-  }
-
-  const location = useLocation();
-  // const redirect = location.search ? location.search.split("=")[1] : "/login";
-
-
-  useEffect(()=>{
-    if (error){
-      alert.error(error);
-      dispatch(clearErrors());
-    }
-    if (isAuthenticated){
-      navigate("/dashboard");
-    }
-
-  }, [dispatch, error, alert, navigate, isAuthenticated]);
-  
-  return (
-    <Fragment>
-    <div className="login">
+<div className="login">
       <main>
     <div className="container">
       
@@ -145,9 +81,3 @@ const Login = () => {
   </main>
   {/* <!-- End #main --> */}
     </div>
-    </Fragment>
-  );
-  
-}
-
-export default Login;
