@@ -5,6 +5,8 @@ import {
     REGISTER_USER_REQUEST,
     REGISTER_USER_SUCCESS,
     REGISTER_USER_FAIL,
+    LOGOUT_SUCCESS,
+    LOGOUT_FAIL,
     ADD_USER_REQUEST,
     ADD_USER_FAIL,
     ADD_USER_SUCCESS,
@@ -31,12 +33,12 @@ import {
           user: action.payload,
         };
   
-    //   case LOGOUT_SUCCESS:
-    //     return {
-    //       loading: false,
-    //       user: null,
-    //       isAuthenticated: false,
-    //     };
+      case LOGOUT_SUCCESS:
+        return {
+          loading: false,
+          user: null,
+          isAuthenticated: false,
+        };
       case LOGIN_FAIL:
       case REGISTER_USER_FAIL:
         return {

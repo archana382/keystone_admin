@@ -1,0 +1,66 @@
+let express = require('express'),
+    multer = require('multer'),
+    mongoose = require('mongoose'),
+    router = express.Router();
+const { v4: uuidv4 } = require('uuid');
+const DIR = './files/';
+const path = require('path');
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, DIR);
+    },
+    filename: (req, file, cb) => {
+        const fileName = file.originalname.toLowerCase().split(' ').join('-');
+        cb(null, uuidv4() + '-' + fileName)
+    }
+});
+
+var upload = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+            cb(null, true);
+        } else {
+            cb(null, false);
+            return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+        }
+    }
+});
+
+// Upload model
+let UploadFile = require('../models/uploadModel');
+
+router.post('/upload', upload.single('files'), (req, res, next) => {
+    const url = req.protocol + '://' + req.get('host')
+    const file = new File({
+        _id: new mongoose.Types.ObjectId(),
+        // name: req.body.name,
+        files: url + '/files/' + req.file.filename
+    });
+    file.save().then(result => {
+        res.status(201).json({
+            message: "file uploaded successfully!",
+            fileUploaded: {
+                _id: result._id,
+                files: result.files
+            }
+        })
+    }).catch(err => {
+        console.log(err),
+            res.status(500).json({
+                error: err
+            });
+    })
+})
+
+router.get("/", (req, res, next) => {
+    UploadFile.find().then(data => {
+        res.status(200).json({
+            message: "Uploaded files retrieved successfully!",
+            uploads: data
+        });
+    });
+});
+
+module.exports = router;

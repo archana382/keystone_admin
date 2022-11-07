@@ -5,10 +5,24 @@
 
 // import profile from '../public/img/profile-img.jpg';
 import { Fragment } from "react";
-import login from "./Login.js"
 import './dashboard.css';
+import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from "react-alert";
+import { logout } from "../action/userAction";
 
-function Dashboard() {
+
+
+const UserDashboard = ( ) => {
+    // const navigate = useNavigate();
+    const { user } = useSelector((state) => state.user);
+
+    const alert = useAlert();
+    const dispatch = useDispatch();
+
+    function logoutUser() {
+        dispatch(logout());
+        alert.success("Logout Successfully");
+    }
   return (
    
     <Fragment>
@@ -22,7 +36,7 @@ function Dashboard() {
             {/* <img src={logo}  className = "App-logo" alt="logo"/> */}
             
             {/* <img src="assets/img/logo.png" alt=""> */}
-            <span className="d-none d-lg-block">KEYSTONE GLOBAL</span>
+            <span className="d-none d-lg-block">AGI LMS</span>
         </a>
         <i className="bi bi-list toggle-sidebar-btn"></i>
         </div>
@@ -233,7 +247,7 @@ function Dashboard() {
                 </li>
 
                 <li>
-                <a className="dropdown-item d-flex align-items-center" href="#">
+                <a className="dropdown-item d-flex align-items-center" href="/" onSubmit={logoutUser}>
                     <i className="bi bi-box-arrow-right"></i>
                     <span>Sign Out</span>
                 </a>
@@ -500,7 +514,7 @@ function Dashboard() {
         <main id="main" className="main">
 
             <div className="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>User Dashboard</h1>
             <nav>
                 <ol className="breadcrumb">
                 <li className="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -788,4 +802,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default UserDashboard;

@@ -1,5 +1,14 @@
 const express = require("express");
-const { loginUser, registerUser, createUser, updateUser, deleteUser, getUserDetails, getSingleUser, getAllUser } = require("../controllers/userController");
+const { 
+    loginUser, 
+    registerUser, 
+    createUser,
+    logout, 
+    updateUser, 
+    deleteUser, 
+    getUserDetails, 
+    getSingleUser, 
+    getAllUser } = require("../controllers/userController");
 const { isAuthenticatedUser, authorizedRoles } = require("../middleware/authentication");
 const router = express.Router();
 
@@ -7,6 +16,8 @@ const router = express.Router();
 router.route("/register").post(registerUser);
 
 router.route("/login").post(loginUser);
+
+router.route("/logout").get(logout);
 
 router.route("/me").get(isAuthenticatedUser, getUserDetails)
 

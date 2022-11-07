@@ -46,7 +46,7 @@ const Login = () => {
   }
 
   const location = useLocation();
-  // const redirect = location.search ? location.search.split("=")[1] : "/login";
+  const redirect = location.search ? location.search.split("=")[1] : "/dashboard";
 
 
   useEffect(()=>{
@@ -54,8 +54,11 @@ const Login = () => {
       alert.error(error);
       dispatch(clearErrors());
     }
+    if(user.role === "admin" && isAuthenticated){
+      navigate("/admin/dashboard")
+    }
     if (isAuthenticated){
-      navigate("/dashboard");
+      navigate(redirect);
     }
 
   }, [dispatch, error, alert, navigate, isAuthenticated]);

@@ -2,6 +2,8 @@ import {
   LOGIN_REQUEST,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAIL,
   REGISTER_USER_REQUEST,
   REGISTER_USER_SUCCESS,
   REGISTER_USER_FAIL,
@@ -76,6 +78,17 @@ try {
     payload: error.response.data.message,
   });
 }
+};
+
+// Logout User
+export const logout = () => async (dispatch) => {
+  try {
+    await axios.get(`/api/v1/logout`);
+
+    dispatch({ type: LOGOUT_SUCCESS });
+  } catch (error) {
+    dispatch({ type: LOGOUT_FAIL, payload: error.response.data.message });
+  }
 };
 
 // Clearing Errors

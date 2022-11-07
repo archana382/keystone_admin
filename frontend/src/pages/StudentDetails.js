@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SideBar from '../pages/SideBar'
+import SideBar from './SideBar'
 
 
 class StudentDetails extends Component {
@@ -13,7 +13,7 @@ class StudentDetails extends Component {
             <h1>Dashboard</h1>
             <nav>
                 <ol className="breadcrumb">
-                <li className="breadcrumb-item"><a href="index.html">Student Deatils</a></li>
+                <li className="breadcrumb-item"><a href="index.html">Student Details</a></li>
                 <li className="breadcrumb-item active">Dashboard</li>
                 </ol>
             </nav>
