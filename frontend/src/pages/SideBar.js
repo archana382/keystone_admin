@@ -5,10 +5,22 @@
 
 // import profile from '../public/img/profile-img.jpg';
 import { Fragment } from "react";
-import login from "./Login.js"
 import './dashboard.css';
+import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from "react-alert";
+import { logout } from "../action/userAction";
 
-function Dashboard() {
+const Dashboard = ( ) => {
+
+    const { user } = useSelector((state) => state.user);
+
+    const alert = useAlert();
+    const dispatch = useDispatch();
+
+    function logoutUser() {
+        dispatch(logout());
+        alert.success("Logout Successfully");
+    }
   return (
    
     <Fragment>
@@ -233,7 +245,7 @@ function Dashboard() {
                 </li>
 
                 <li>
-                <a className="dropdown-item d-flex align-items-center" href="#">
+                <a className="dropdown-item d-flex align-items-center" href="/" onSubmit={logoutUser}>
                     <i className="bi bi-box-arrow-right"></i>
                     <span>Sign Out</span>
                 </a>
@@ -483,6 +495,13 @@ function Dashboard() {
                 <a className="nav-link collapsed" href="/uploadPDF">
                 <i className="bi bi-card-list"></i>
                 <span>Upload Document</span>
+                </a>
+            </li>
+
+            <li className="nav-item">
+                <a className="nav-link collapsed" href="/uploadDownload">
+                <i className="bi bi-card-list"></i>
+                <span>Upload Download</span>
                 </a>
             </li>
 

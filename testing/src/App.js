@@ -10,6 +10,7 @@ import axios from "axios";
 import AddUser from "./AddUser";
 import Import from "./Import";
 import Calendar from './Calendar/Calendar';
+import AddStudent from "./AddStudent";
 
 
 
@@ -25,9 +26,11 @@ function App() {
 
         <Route path="/" element={<Login/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/add" element={<AddUser/>}/>
+        <Route path="/adduser" element={<AddUser/>}/>
         <Route path="/import" element={<Import/>}/>
         <Route path="/calendar" element={<Calendar/>}/>
+        <Route path="/addstudent" element={<AddStudent/>}/>
+
 
 
       </Routes>

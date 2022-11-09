@@ -9,6 +9,7 @@ import './dashboard.css';
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { logout } from "../action/userAction";
+import { Button } from "@material-ui/core";
 
 
 
@@ -502,6 +503,19 @@ const UserDashboard = ( ) => {
                 </a>
             </li>
             
+            <li className="nav-item">
+                <a className="nav-link collapsed" href="/uploadPDF">
+                <i className="bi bi-card-list"></i>
+                <span>Upload Document</span>
+                </a>
+            </li>
+
+            <li className="nav-item">
+                <a className="nav-link collapsed" href="/uploadDownload">
+                <i className="bi bi-card-list"></i>
+                <span>Upload Download</span>
+                </a>
+            </li>
 
             
           
@@ -523,7 +537,11 @@ const UserDashboard = ( ) => {
             </nav>
             </div>
         </main>
+        
+        <div className="addstudent">
+        <input type="submit" value="Add Student" className="addBtn"/>
 
+        </div>
         <section className="section dashboard">
             <div className="row">
                 <div className="col-lg-8">

@@ -3,13 +3,14 @@ import {createStore,combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import thunk from "redux-thunk";
-import { userReducer } from "./reducers/userReducer";
+import { addUserReducer, userReducer } from "./reducers/userReducer";
 import calendarReducer from "./reducers/calendarReducer";
 
 
 
 const reducer = combineReducers({
     user : userReducer,
+    user : addUserReducer,
     calendar : calendarReducer
 
 })

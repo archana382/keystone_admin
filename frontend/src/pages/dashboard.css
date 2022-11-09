@@ -50,6 +50,9 @@
     transition: all 0.3s;
   }
   
+  .addstudent{
+    margin-left:800px;
+  }
   @media (max-width: 1199px) {
     #main {
       padding: 20px;

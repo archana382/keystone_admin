@@ -12,6 +12,8 @@ import NewStudent from "./pages/NewStudent";
 import StudentDetails from "./pages/StudentDetails";
 import Completed from "./pages/Completed";
 import UploadPDF from "./pages/UploadPDF";
+import UploadDownload from "./pages/UploadDownload";
+
 
 import ProtectedRoute from "./Route/ProtectedRoute";
 // 
@@ -44,6 +46,7 @@ function App() {
         
         <Route path="/dashboard" element={<UserDashboard/>}/>
         <Route path="/uploadPDF" element={<UploadPDF/>}/>
+        <Route path="/uploadDownload" element={<UploadDownload/>}/>
 
         
         <Route isAdmin={true} path="/admin/dashboard" element={<ProtectedRoute>{<AdminDashboard/>} </ProtectedRoute>}  />

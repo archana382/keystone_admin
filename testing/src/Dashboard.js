@@ -12,7 +12,7 @@ const Dashboard = () => {
             <div className="dashboardContainer">
                 <h1>Welcome to Keystone!!!</h1>
                 {/* <input type="submit" value="Add User" className="addBtn"/> */}
-                <Link to="/add">
+                <Link to="/adduser">
                     <p>Add User</p>
                 </Link>
                 <Link to="/import">
@@ -20,6 +20,9 @@ const Dashboard = () => {
                 </Link>
                 <Link to="/calendar">
                     <p>Calendar</p>
+                </Link>
+                <Link to="/addstudent">
+                    <p>Add Student</p>
                 </Link>
             </div>
         </Fragment>

@@ -21,12 +21,16 @@ dotenv.config({path:"backend/config/config.env"});
 
 //Route Imports
 const user = require("./routes/userRoute")
+const student = require("./routes/studentRoute");
+
 
 const upload = require("./controllers/uploadController")
 
 app.use('/files', express.static('files'));
 
 app.use("/api/v1", user);
+
+app.use("/api/v1", student);
 
 app.use("/api/v1", upload)
 

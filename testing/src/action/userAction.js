@@ -61,7 +61,7 @@ export const addUser = (userData) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `/api/v1/admin/add`,
+      `/api/v1/admin/adduser`,
       userData,
       config
     );

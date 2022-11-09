@@ -21,7 +21,7 @@ router.route("/logout").get(logout);
 
 router.route("/me").get(isAuthenticatedUser, getUserDetails)
 
-router.route("/admin/add").post(isAuthenticatedUser,authorizedRoles("admin"), createUser);
+router.route("/admin/adduser").post(isAuthenticatedUser,authorizedRoles("admin"), createUser);
 
 router
 .route("/admin/users")
