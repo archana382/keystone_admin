@@ -506,7 +506,7 @@ const Dashboard = ( ) => {
             </li>
 
             <li className="nav-item">
-                <a className="nav-link collapsed" href="/add">
+                <a className="nav-link collapsed" href="/adduser">
                 <i className="bi bi-card-list"></i>
                 <span>Add User</span>
                 </a>

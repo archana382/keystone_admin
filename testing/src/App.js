@@ -11,6 +11,7 @@ import AddUser from "./AddUser";
 import Import from "./Import";
 import Calendar from './Calendar/Calendar';
 import AddStudent from "./AddStudent";
+import StudentList from "./StudentList";
 
 
 
@@ -30,6 +31,8 @@ function App() {
         <Route path="/import" element={<Import/>}/>
         <Route path="/calendar" element={<Calendar/>}/>
         <Route path="/addstudent" element={<AddStudent/>}/>
+        <Route path="/studentlist" element={<StudentList/>}/>
+
 
 
 

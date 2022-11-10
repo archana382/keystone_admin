@@ -46,7 +46,7 @@ const AddStudent = () => {
     
         if (success) {
           alert.success("Student Added Successfully");
-          navigate("/dashboard");
+          navigate("/studentlist");
           dispatch({ type: ADD_STUDENT_RESET });
         }
       }, [dispatch, alert, error, navigate, success]);

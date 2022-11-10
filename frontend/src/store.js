@@ -10,7 +10,7 @@ import calendarReducer from "./reducers/calendarReducer";
 
 const reducer = combineReducers({
     user : userReducer,
-    user : addUserReducer,
+    // add : addUserReducer,
     calendar : calendarReducer
 
 })

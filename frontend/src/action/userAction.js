@@ -53,32 +53,32 @@ export const register = (userData) => async (dispatch) => {
   }
 };
 
-//Add User
-export const addUser = (userData) => async (dispatch) => {
-try {
-  dispatch({ type: ADD_USER_REQUEST });
-
-  const config = {
-    headers: { "Content-Type": "application/json" },
+  //Add User
+  export const addUser = (userData) => async (dispatch) => {
+    try {
+      dispatch({ type: ADD_USER_REQUEST });
+  
+      const config = {
+        headers: { "Content-Type": "application/json" },
+      };
+  
+      const { data } = await axios.post(
+        `/api/v1/admin/adduser`,
+        userData,
+        config
+      );
+  
+      dispatch({
+        type: ADD_USER_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: ADD_USER_FAIL,
+        payload: error.response.data.message,
+      });
+    }
   };
-
-  const { data } = await axios.post(
-    `/api/v1/admin/add`,
-    userData,
-    config
-  );
-
-  dispatch({
-    type: ADD_USER_SUCCESS,
-    payload: data,
-  });
-} catch (error) {
-  dispatch({
-    type: ADD_USER_FAIL,
-    payload: error.response.data.message,
-  });
-}
-};
 
 // Logout User
 export const logout = () => async (dispatch) => {

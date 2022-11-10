@@ -28,7 +28,7 @@ const studentSchema = new mongoose.Schema({
       type: String,
       required: [true, "Please Enter Valley"],
     //   minLength: [8, "Password should be greater than 8 characters"],
-      select: false,
+      // select: false,
     },
     qualification: {
       type: String,

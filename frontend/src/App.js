@@ -37,7 +37,7 @@ function App() {
 
         <Route path="/" element={<Login/>}/>
        
-        <Route path="/add" element={<AddUser/>}/>
+        <Route path="/adduser" element={<AddUser/>}/>
         <Route path="/import" element={<Import/>}/>
         <Route path="/calendar" element={<Calendar/>}/>
         <Route path="/new" element={<NewStudent/>}/>

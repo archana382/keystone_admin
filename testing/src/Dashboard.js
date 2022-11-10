@@ -24,6 +24,9 @@ const Dashboard = () => {
                 <Link to="/addstudent">
                     <p>Add Student</p>
                 </Link>
+                <Link to="/studentlist">
+                    <p>Student List</p>
+                </Link>
             </div>
         </Fragment>
     )
